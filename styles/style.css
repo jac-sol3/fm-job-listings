@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+:root {
+  --light-cyan: hsl(180, 31%, 95%); /* filter tablets */
+  --light-cyan-bg: hsl(180, 52%, 96%); /* background */
+  --dark-cyan: hsl(180, 29%, 50%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--light-cyan-bg);
+}
+
+/* Header */
+header {
+  background-image: url("../images/bg-header-desktop.svg");
+  background-color: var(--dark-cyan);
+  height: 156px;
+}
+
+main {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+/* Filters */
+#filter-nav {
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 50px -30px hsl(180, 29%, 50%);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#filter-nav__btn-elements {
+  margin-right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+#filter-nav:has(#filter-nav__btn-elements:empty) {
+  display: none;
+}
+
+.filter-btn-element {
+  color: var(--dark-cyan);
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  padding: 0;
+  margin: 0px 7px 0px 7px;
+}
+
+.filter-btn-element__name {
+  background-color: var(--light-cyan-bg);
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+}
+
+.filter-btn-element__remove {
+  background-color: var(--dark-cyan);
+  background-image: url("../images/icon-remove.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0px 5px 5px 0px;
+  width: 14px;
+  height: 14px;
+  padding: 5px;
+}
+
+.filter-btn-element__remove:hover {
+  background-color: var(--very-dark-grayish-cyan);
+  cursor: pointer;
+}
+
+#filter-nav__btn-clear {
+  color: var(--dark-cyan);
+  order: 1;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+#filter-nav__btn-clear:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Whole list */
+#job-offer-list {
+  list-style: none;
+  margin: auto;
+}
+
+.list-element {
+  background-color: white;
+  box-shadow: 0px 0px 50px -30px hsl(180, 29%, 50%);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+}
+
+.list-element:has(.info-header__featured) {
+  border-left: solid var(--dark-cyan) 5px;
+  padding-left: 25px;
+}
+
+/* Single list element */
+/* Logo */
+.list-element__logo {
+  width: 120px;
+}
+
+/* Info */
+.list-element__info {
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-header__company-name {
+  color: var(--dark-cyan);
+  padding: 0;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.info-header__new,
+.info-header__featured {
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--light-cyan);
+  font-size: 0.8rem;
+}
+
+.info-header__new {
+  background-color: var(--dark-cyan);
+}
+
+.info-header__featured {
+  background-color: var(--very-dark-grayish-cyan);
+}
+
+.list-element__info-position {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.list-element__info-position:hover {
+  color: var(--dark-cyan);
+  cursor: pointer;
+}
+
+.list-element__info-time {
+  display: flex;
+  justify-content: flex-start;
+  list-style: inside;
+  color: var(--dark-grayish-cyan);
+}
+
+.info-time__element:first-child {
+  list-style: none;
+}
+
+.info-time__element {
+  margin-right: 15px;
+}
+
+/* Technical info */
+.list-element__tech {
+  flex-grow: 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-element {
+  background-color: var(--light-cyan-bg);
+  color: var(--dark-cyan);
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.tech-element:hover {
+  background-color: var(--dark-cyan);
+  color: var(--light-cyan);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+  .list-element {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .list-element__logo {
+    position: relative;
+    bottom: 50px;
+    margin-bottom: 10px;
+  }
+
+  .list-element__logo img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+  }
+
+  .list-element__info {
+    gap: 15px;
+    border-bottom: solid 1px var(--dark-grayish-cyan);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .list-element__info-time {
+    font-size: 0.8rem;
+  }
+
+  .list-element__tech {
+    justify-content: flex-start;
+  }
+}
