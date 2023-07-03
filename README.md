@@ -1,2 +1,1 @@
-link
-https://jacsol-job-listings.netlify.app
+[LINK] https://jacsol-job-listings.netlify.app
